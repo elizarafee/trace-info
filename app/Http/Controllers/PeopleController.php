@@ -37,7 +37,16 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($request->input());   
+        // print_r($request->input());   
+        $people = new People;
+        $people->first_name = $request->first_name;
+        $people->last_name = $request->last_name;
+        $people->address_line_1 = $request->address;
+        $people->address_line_2 = $request->street;
+        $people->city  = $request->city ;
+        $people->email  = $request->email ;
+        $people->phone  = $request->phone ;
+        $people->save();
     }
 
     /**
