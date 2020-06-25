@@ -19,7 +19,7 @@ class CreatePeopeTable extends Migration
             $table->string('address_line_1');
             $table->string('address_line_2')->nullable();
             $table->string('city');
-            $table->string('long');
+            $table->string('long')->nullable();
             $table->string('let')->nullable();
             $table->string('email', 70);
             $table->string('phone_number');
