@@ -26,7 +26,7 @@ class PeopleController extends Controller
      */
     public function create()
     {
-        //
+        return view('people.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class PeopleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        print_r($request->input());   
     }
 
     /**
