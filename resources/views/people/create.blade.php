@@ -25,12 +25,12 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" name="address"
+                    <input type="text" class="form-control" id="inputAddress" name="address_line_1"
                         placeholder="23, 1st floor">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputAddress2">Street</label>
-                    <input type="text" class="form-control" id="inputStreet" name="street" placeholder="Kajalshah">
+                    <input type="text" class="form-control" id="inputStreet" name="address_line_2" placeholder="Kajalshah">
                 </div>
             </div>
             <div class="row">

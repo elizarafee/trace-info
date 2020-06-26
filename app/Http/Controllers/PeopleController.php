@@ -41,8 +41,8 @@ class PeopleController extends Controller
         $people = new People;
         $people->first_name = $request->first_name;
         $people->last_name = $request->last_name;
-        $people->address_line_1 = $request->address;
-        $people->address_line_2 = $request->street;
+        $people->address_line_1 = $request->address_line_1;
+        $people->address_line_2 = $request->address_line_2;
         $people->city  = $request->city ;
         $people->email  = $request->email ;
         $people->phone  = $request->phone ;
