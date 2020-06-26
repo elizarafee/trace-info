@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePeopleRequest;
 
 use Illuminate\Support\Facades\DB;
 use App\People;
@@ -35,7 +36,7 @@ class PeopleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePeopleRequest $request)
     {
         // print_r($request->input());   
         $people = new People;
