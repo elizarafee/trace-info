@@ -8,6 +8,8 @@ use App\Http\Requests\StorePeopleRequest;
 use Illuminate\Support\Facades\DB;
 use App\People;
 
+use function GuzzleHttp\Promise\all;
+
 class PeopleController extends Controller
 {
     /**
@@ -17,7 +19,8 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        return view('people.index');
+        $data = People::all();
+        return view('people.index', ['data' => $data]);
     }
 
     /**
@@ -58,7 +61,7 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
