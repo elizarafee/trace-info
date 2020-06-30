@@ -61,7 +61,8 @@ class PeopleController extends Controller
      */
     public function show($id)
     {
-       //
+        $person = People::find($id);
+        return view('people.show', ['person' => $person] );
     }
 
     /**
