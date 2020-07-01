@@ -81,7 +81,8 @@ class PeopleController extends Controller
      */
     public function edit($id)
     {
-        // 
+        $person = People::find($id);
+        return view('people.edit', ['person' => $person]);
     }
 
     /**
@@ -93,7 +94,22 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $person_id)
     {
-        //
+        $data = array(
+    'first_name' => $request->get('first_name'),
+    'last_name' => $request->get('last_name'),
+    'address_line_1' => $request->get('address_line_1'),
+    'address_line_2' => $request->get('address_line_2'),
+    'city' => $request->get('city'),
+    'email' => $request->get('email'),
+    'phone' => $request->get('phone'),
+    );
+        $update = People::where('id', $person_id)->update($data);
+
+        if ($update) {
+            return redirect('/people/'.$person_id)->with('success', 'Profile successfully updated.');
+        }
+
+        return redirect()->back()->with('error', 'Failed to update profile. Please try again.');
     }
 
     /**
