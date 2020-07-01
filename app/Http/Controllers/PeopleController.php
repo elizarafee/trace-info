@@ -41,16 +41,24 @@ class PeopleController extends Controller
      */
     public function store(StorePeopleRequest $request)
     {
-        // print_r($request->input());   
-        $people = new People;
-        $people->first_name = $request->first_name;
-        $people->last_name = $request->last_name;
-        $people->address_line_1 = $request->address_line_1;
-        $people->address_line_2 = $request->address_line_2;
-        $people->city  = $request->city ;
-        $people->email  = $request->email ;
-        $people->phone  = $request->phone ;
-        $people->save();
+        // print_r($request->input());
+        $data = array(
+            'first_name' => $request->get('first_name'),
+            'last_name' => $request->get('last_name'),
+            'address_line_1' => $request->get('address_line_1'),
+            'address_line_2' => $request->get('address_line_2'),
+            'city' => $request->get('city'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+        );
+
+        $person = People::create($data);
+
+        if ($person) {
+            return redirect('/people/'.$person->id)->with('success', 'Profile successfully created.');
+        }
+
+        return redirect()->back()->with('error', 'Failed to create profile. Please try again.');
     }
 
     /**
@@ -62,7 +70,7 @@ class PeopleController extends Controller
     public function show($id)
     {
         $person = People::find($id);
-        return view('people.show', ['person' => $person] );
+        return view('people.show', ['person' => $person]);
     }
 
     /**
@@ -73,7 +81,7 @@ class PeopleController extends Controller
      */
     public function edit($id)
     {
-        //
+        // 
     }
 
     /**
@@ -83,7 +91,7 @@ class PeopleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $person_id)
     {
         //
     }
