@@ -22,6 +22,14 @@
                     <button type="btn submit">Edit Profile</button>
                 </div>
             </form>
+            <div class='d-flex justify-content-center'>
+                <form action="{{ action('PeopleController@destroy', $person['id']) }}" , method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" value="DELETE">
+                    <button type="submit" name="delete" class='btn btn-danger'>Delete</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

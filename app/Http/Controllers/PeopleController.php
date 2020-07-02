@@ -121,6 +121,12 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $person = People::find($id);
+        $deleted = $person->delete();
+
+        if ($deleted) {
+            return redirect('/people')->with('success', 'Deleted profile successfully!');
+        }
+        return redirect('/people')->with('error', 'Failed to delete profile. Please try again.');
     }
 }
