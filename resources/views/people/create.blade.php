@@ -4,7 +4,11 @@
 <div class='container-fluid'>
     <div class="row  d-flex justify-content-center">
         <div class="col-md-8 col-sm-12">
-            <form action="/trace-info/public/people" method="POST">
+            <div>
+                <h3 class='d-flex justify-content-center font-weight-bold'> Trace-Info </h3>
+                <h2 class='d-flex justify-content-center'> Create your profile </h2>
+            </div>
+            <form action="/trace-info/public/people" class='p-4' method="POST">
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -99,7 +103,10 @@
                         @enderror
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Add People</button>
+
+                <div class='d-flex justify-content-center'>
+                    <button type="submit" class="btn btn-primary">Add People</button>
+                </div>
             </form>
         </div>
     </div>

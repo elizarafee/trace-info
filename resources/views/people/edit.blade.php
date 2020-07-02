@@ -10,10 +10,10 @@
                 @method('PUT')
 
                 <div>
-                    <h1 class='d-flex justify-content-center'> Trace-Info </h1>
-                    <h1 class='d-flex justify-content-center'> Update your profile </h1>
+                    <h3 class='d-flex justify-content-center font-weight-bold'> Trace-Info </h3>
+                    <h2 class='d-flex justify-content-center'> Update your profile </h2>
                 </div>
-
+                <div class='p-4'>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>First Name</label>
@@ -120,7 +120,10 @@
                         @enderror
                     </div>
                 </div>
+                <div class='d-flex justify-content-center'>
                 <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+                </div>
             </form>
         </div>
     </div>

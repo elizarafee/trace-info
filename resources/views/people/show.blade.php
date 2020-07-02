@@ -4,7 +4,7 @@
 <div class='container-fluid'>
     <div class="row  d-flex justify-content-center">
         <div class="col-md-4 col-sm-12">
-            <h1 class='d-flex justify-content-center'> Trace-Info </h1>
+            <h3 class='d-flex justify-content-center font-weight-bold'> Trace-Info </h3>
             <h2 class='d-flex justify-content-center'> Welcome! {{ $person->first_name}} {{ $person->last_name }} </h2>
 
             <form class='form-row d-flex justify-content-center' action="{{url('people/'.$person->id.'/edit')}}"
@@ -18,16 +18,16 @@
                         <li class="list-group-item">Phone : {{ $person->phone }}</li>
                     </ul>
                 </div>
-                <div class='mt-1'>
-                    <button type="btn submit">Edit Profile</button>
+                <div class='mt-2'>
+                    <button type="submit" class="btn btn-warning">Edit Profile</button>
                 </div>
             </form>
-            <div class='d-flex justify-content-center'>
+            <div class='d-flex justify-content-center mt-1'>
                 <form action="{{ action('PeopleController@destroy', $person['id']) }}" , method="POST">
                     @csrf
                     @method('DELETE')
                     <input type="hidden" value="DELETE">
-                    <button type="submit" name="delete" class='btn btn-danger'>Delete</button>
+                    <button type="submit" name="delete" class='btn btn-danger'>Delete profile</button>
                 </form>
             </div>
         </div>
