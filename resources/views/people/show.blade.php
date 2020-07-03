@@ -18,43 +18,19 @@
                         <li class="list-group-item">Phone : {{ $person->phone }}</li>
                     </ul>
                 </div>
-                <div class='mt-2'>
-                    <button type="submit" class="btn btn-warning shadow-lg">Edit Profile</button>
-                </div>
             </form>
+            <div class='d-flex justify-content-center mt-2'>
+                @include('people.modals.edit')
+            </div>
             <div class='d-flex justify-content-center mt-1'>
-                <form action="{{ action('PeopleController@destroy', $person['id']) }}" , method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <input type="hidden" value="DELETE">
-                    <button type="submit" name="delete" class='btn btn-danger shadow-lg' data-toggle="modal" data-target="#delete">Delete profile</button>
-                </form>
+                @include('people.modals.delete')
+            </div>
+            <div class='d-flex justify-content-center mt-3'>
+                <div class='col-md-8 d-flex text-center'>
+                <h6 class='text-muted'>If you want to see all of the registered people <a href="{{ url('/people') }}">Click here</a></h6>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 @endsection
