@@ -14,7 +14,7 @@ class PeopleTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\models\People');
-        for ($i=0; $i<20; $i++) {
+        for ($i=0; $i<100; $i++) {
             DB::table('People')-> insert([
             'first_name' =>  $faker->firstName(),
             'last_name' =>  $faker->lastName(),

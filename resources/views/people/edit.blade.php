@@ -121,7 +121,7 @@
                     </div>
                 </div>
                 <div class='d-flex justify-content-center'>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary shadow-lg">Update</button>
                 </div>
                 </div>
             </form>

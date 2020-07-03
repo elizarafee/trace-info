@@ -20,7 +20,7 @@
                     </ul>
                 </div>
                 <div class='mt-2'>
-                    <button type="btn submit" class="btn btn-warning">Edit Profile</button>
+                    <button type="btn submit" class="btn btn-warning shadow-lg">Edit Profile</button>
                 </div>
             </form>
             <div class='d-flex justify-content-center mt-1'>
@@ -28,7 +28,7 @@
                     @csrf
                     @method('DELETE')
                     <input type="hidden" value="DELETE">
-                    <button type="submit" name="delete" class='btn btn-danger'>Delete profile</button>
+                    <button type="submit" name="delete" class='btn btn-danger shadow-lg'>Delete profile</button>
                 </form>
             </div>
             </div>

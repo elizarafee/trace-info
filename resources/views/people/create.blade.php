@@ -105,7 +105,7 @@
                 </div>
 
                 <div class='d-flex justify-content-center'>
-                    <button type="submit" class="btn btn-primary">Add People</button>
+                    <button type="submit" class="btn btn-primary shadow-lg">Add People</button>
                 </div>
             </form>
         </div>
