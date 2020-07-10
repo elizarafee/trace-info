@@ -27,6 +27,12 @@
                 <div class='d-flex justify-content-center mt-1'>
                     @include('people.modals.delete')
                 </div>
+                <div class='d-flex justify-content-center mt-3'>
+                    <div class='col-md-8 d-flex text-center'>
+                        <h6 class='text-muted'>If you want to see all of the registered people <a
+                                href="{{ url('/people') }}">Click here</a></h6>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

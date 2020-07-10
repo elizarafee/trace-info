@@ -13,8 +13,7 @@
 
             <div class="form-group col-md-6">
                 <h6 class='p-3'><a href="{{url('/people/'.$person->id)}}"> {{ $person->id }} - {{ $person->first_name }}
-                        {{
-                        $person->last_name }}</a></h6>
+                        {{ $person->last_name }}</a></h6>
             </div>
 
             <div class="form-group col-md-2 d-flex justify-content-center">
