@@ -88,7 +88,26 @@ class AddressController extends Controller
      */
     public function show($id)
     {
-        //
+        //  $address = Address::find($id);
+        
+         $data = array(
+            // 'addresses_id as id',
+            'people.id as people_id',
+            'addresses.first_name as first_name',
+            'addresses.last_name as last_name',
+            'people.email as email',
+            'people.phone as email',
+            'addresses.address_line_1',
+            'addresses.address_line_2',
+            'addresses.city',
+            'addresses.country',
+            'addresses.postcode',
+       );
+
+        $address = Address::join('people', 'people.id', 'addresses.people_id')
+        ->select($data);
+
+        return view('addresses.show', [ 'address' => $address ]);
     }
 
     /**
