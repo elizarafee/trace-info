@@ -131,7 +131,23 @@ class AddressController extends Controller
      */
     public function update(StoreAddressRequest $request, $id)
     {
-        //
+        $data = array(
+            'address_line_1' => $request->get('address_line_1'),
+            'address_line_2' => $request->get('address_line_2'),
+            'city' => $request->get('city'),
+            'country' => $request->get('country'),
+            'postcode' => $request->get('postcode'),
+            'lng' => $request->get('lng'),
+            'lat' => $request->get('lat'),
+        );
+        $update = Address::where($id)->update();
+        $address = Address::find($id);
+
+        if ($update) {
+            return redirect('/addresses/'.$address->id)->with('success', 'Address successfully updated.');
+        }
+
+        return redirect()->back()->with('error', 'Failed to update address. Please try again.');
     }
 
     /**
