@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreAddressRequest;
+
+use Illuminate\Support\Facades\DB;
+use App\Address;
+use App\People;
+use Illuminate\Support\Facades\Auth;
+
+use function GuzzleHttp\Promise\all; 
+
 
 class AddressController extends Controller
 {
@@ -13,7 +21,24 @@ class AddressController extends Controller
      */
     public function index()
     {
-        //
+        $data = array(
+            // 'addresses.id as id',
+            'people.id as people_id',
+            'addresses.first_name as first_name',
+            'addresses.last_name as last_name',
+            'people.email as email',
+            'people.phone as email',
+            'addresses.address_line_1',
+            'addresses.address_line_2',
+            'addresses.city',
+            'addresses.country',
+            'addresses.postcode',
+       );
+
+        $address = Address::join('people', 'people.id', 'addresses.people_id')
+        ->select($data);
+        
+        return view('addresses.index', ['address' => $address]);
     }
 
     /**
