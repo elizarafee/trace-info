@@ -45,9 +45,9 @@ class PeopleController extends Controller
         $data = array(
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
-            'address_line_1' => $request->get('address_line_1'),
-            'address_line_2' => $request->get('address_line_2'),
-            'city' => $request->get('city'),
+            // 'address_line_1' => $request->get('address_line_1'),
+            // 'address_line_2' => $request->get('address_line_2'),
+            // 'city' => $request->get('city'),
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),
         );
@@ -97,8 +97,8 @@ class PeopleController extends Controller
         $data = array(
                 'first_name' => $request->get('first_name'),
                 'last_name' => $request->get('last_name'),
-                'address_line_1' => $request->get('address_line_1'),
-                'address_line_2' => $request->get('address_line_2'),
+                // 'address_line_1' => $request->get('address_line_1'),
+                // 'address_line_2' => $request->get('address_line_2'),
                 'city' => $request->get('city'),
                 'email' => $request->get('email'),
                 'phone' => $request->get('phone'),

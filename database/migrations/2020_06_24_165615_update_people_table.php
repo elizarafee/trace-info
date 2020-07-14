@@ -16,11 +16,11 @@ class UpdatePeopleTable extends Migration
         Schema::table('people', function (Blueprint $table) {
             $table->renameColumn('name', 'first_name');
             $table->string('last_name', 30)->after('name');
-            $table->string('address_line_1', 100)->change();
-            $table->string('address_line_2', 100)->nullable()->change();
-            $table->string('city', 20)->change();
-            $table->renameColumn('long', 'lng');
-            $table->renameColumn('let', 'lat');
+            // $table->string('address_line_1', 100)->change();
+            // $table->string('address_line_2', 100)->nullable()->change();
+            // $table->string('city', 20)->change();
+            // $table->renameColumn('long', 'lng');
+            // $table->renameColumn('let', 'lat');
             $table->renameColumn('phone_number', 'phone');  
         });
     }

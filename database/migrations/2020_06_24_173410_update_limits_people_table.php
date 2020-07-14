@@ -15,8 +15,8 @@ class UpdateLimitsPeopleTable extends Migration
     {
         Schema::table('people', function (Blueprint $table) {
             $table->string('first_name', 30)->change();
-            $table->string('lng', 20)->change();
-            $table->string('lat', 20)->change();
+            // $table->string('lng', 20)->change();
+            // $table->string('lat', 20)->change();
             $table->string('phone', 20)->change();
         });
     }

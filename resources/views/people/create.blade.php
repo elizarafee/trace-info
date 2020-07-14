@@ -49,7 +49,7 @@
                         @enderror
                     </div>
                 </div>
-
+<!-- 
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="inputAddress">Address</label>
@@ -88,7 +88,7 @@
                         </span>
                         @enderror
                     </div>
-                </div>
+                </div> -->
 
                 <div class="row">
                     <div class="form-group col-md-12">

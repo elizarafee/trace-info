@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-group col-md-6">
                             <label for="inputAddress">Address</label>
                             <input type="text" class="form-control @error('address_line_1') is-invalid @enderror"
@@ -106,7 +106,7 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="row">
                         <div class="form-group col-md-12">
