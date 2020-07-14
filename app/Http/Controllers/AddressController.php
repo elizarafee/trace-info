@@ -57,9 +57,27 @@ class AddressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAddressRequest $request)
     {
-        //
+        $people = People::first();
+
+         $data = array(
+            'people_id' => $people->id,
+            'address_line_1' => $request->get('address_line_1'),
+            'address_line_2' => $request->get('address_line_2'),
+            'city' => $request->get('city'),
+            'country' => $request->get('country'),
+            'postcode' => $request->get('postcode'),
+            // 'lng' => $request->get('lng'),
+            // 'lat' => $request->get('lat'),
+        );
+        $address = Address::create($data);
+
+        if ($address) {
+            return redirect('/addresses/'.$address->id)->with('success', 'Address successfully Added.');
+        }
+
+        return redirect()->back()->with('error', 'Failed to add address. Please try again.');
     }
 
     /**
@@ -91,7 +109,7 @@ class AddressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreAddressRequest $request, $id)
     {
         //
     }
