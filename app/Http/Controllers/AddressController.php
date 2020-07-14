@@ -118,7 +118,8 @@ class AddressController extends Controller
      */
     public function edit($id)
     {
-        //
+        $address = Address::find($id);
+        return view('addresses.edit', [ 'address' => $address ]);
     }
 
     /**
