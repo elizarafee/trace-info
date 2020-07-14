@@ -158,6 +158,12 @@ class AddressController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $address = Address::find($id);
+        $deleted = $address->delete();
+
+        if ($deleted) {
+            return redirect('/addresses')->with('success', 'Deleted profile successfully!');
+        }
+        return redirect('/addresses')->with('error', 'Failed to delete profile. Please try again.');
     }
 }
